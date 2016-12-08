@@ -3,22 +3,7 @@ Listen for node events (creating, updating and deleting) from **Enonic XP** and 
 
 ## Usage
 
-In your gradle.build file add TINEs repository to the repository list:
-```
-repositories {
-	maven {
-		url 'https://trm.tine.no/nexus/content/repositories/enonic-xp/'
-	}
-}
-```
-
-After this, add the following dependency (where ``<version>`` is the actual version to use):
-
-```
-dependencies {
-	include 'no.tine.xp:xp-lib-browsersync:<version>'
-}
-```
+Deploy to your your Enonic XP installation.
 
 Then start the server with the **dev** flag ([Enonic XP Development mode](http://xp.readthedocs.io/en/stable/developer/projects/devmode.html#gradle-dev-mode))
 

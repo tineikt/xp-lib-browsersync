@@ -3,7 +3,7 @@ buildscript {
         mavenLocal()
         jcenter()
         maven {
-            url 'http://repo.enonic.com/public'
+            url "http://repo.enonic.com/public"
         }
     }
 
@@ -12,13 +12,14 @@ buildscript {
     }
 }
 
+apply plugin: 'maven-publish'
 apply plugin: 'com.enonic.xp.app'
 
 app {
     name = project.appName
     displayName = project.displayName
-    vendorName = 'TINE SA'
-    vendorUrl = 'http://www.tine.no/'
+    vendorName = "TINE SA"
+    vendorUrl = "http://www.tine.no/"
 }
 
 dependencies {
@@ -29,6 +30,26 @@ dependencies {
 repositories {
     jcenter()
     maven {
-        url 'http://repo.enonic.com/public'
+        url "http://repo.enonic.com/public"
+    }
+}
+
+publishing {
+    publications {
+        maven( MavenPublication ) {
+            groupId "no.tine.xp"
+            artifactId "xp-lib-browsersync"
+            version "$version"
+        }
+    }
+    repositories {
+        maven {
+			name "xp-lib-browsersync"
+            credentials {
+                username "$nexusUser"
+                password "$nexusPassword"
+            }
+            url "https://trm.tine.no/nexus/content/repositories/enonic-xp/"
+        }
     }
 }
