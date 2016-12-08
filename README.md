@@ -1,5 +1,5 @@
 # lib-browsersync
-Listen for node events (creating, updating and deleting) from **Enonic XP** and trigger a browsersync reload *if server is running with **dev** flag*
+Listen for node events (creating, updating and deleting) from **Enonic XP** and trigger a browsersync reload *if server is running with __dev__ flag*
 
 ## Usage
 
