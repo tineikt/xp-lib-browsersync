@@ -33,3 +33,14 @@ repositories {
         url "http://repo.enonic.com/public"
     }
 }
+
+publishing {
+    publications {
+        maven( MavenPublication ) {
+            groupId "no.tine.xp"
+            artifactId "xp-lib-browsersync"
+            version "$version"
+            from components.java
+        }
+    }
+}
