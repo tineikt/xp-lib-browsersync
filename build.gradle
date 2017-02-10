@@ -33,24 +33,3 @@ repositories {
         url "http://repo.enonic.com/public"
     }
 }
-
-publishing {
-    publications {
-        maven( MavenPublication ) {
-            groupId "no.tine.xp"
-            artifactId "xp-lib-browsersync"
-            version "$version"
-            from components.java
-        }
-    }
-    repositories {
-        maven {
-            name "xp-lib-browsersync"
-            credentials {
-                username "$nexusUser"
-                password "$nexusPassword"
-            }
-            url "https://trm.tine.no/nexus/content/repositories/enonic-xp/"
-        }
-    }
-}
